@@ -1,0 +1,204 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Expand stories.pk from a basic multi-page stories site to include a legal Terms & Conditions page, an updated Home hero/banner concept, and dedicated Signup/Login pages with redirect behavior.",
+  "architectural_notes": [
+    "Site name: stories.pk",
+    "Primary pages: Home, Stories (listing + detail), About, Contact",
+    "Design direction: light/clean theme; professional layout; subtle animations",
+    "Add new legal page route: Terms & Conditions (/terms).",
+    "Add authentication routes/pages: Signup and Login with redirect after success."
+  ],
+  "known_issues": [
+    "User-provided Terms & Conditions copy references stories.com, but project/site name is stories.pk (domain/content inconsistency to resolve)."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-multi-page-frontend-with-these-routes-and-pages-all-in-english-user-facing-text-home-stories-stories-story-detail-stories-slug-or-id-about-about-and-contact-contact-use-a-shared-site-layout-with-a-persistent-header-logo-navigation-and-footer-across-all-pages",
+      "title": "Create a multi-page frontend with these routes and pages, all in English user-facing text: Home (/), Stories (/stories), Story Detail (/stories/:slug or :id), About (/about), and Contact (/contact). Use a shared site layout with a persistent header (logo + navigation) and footer across all pages.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-cohesive-professional-light-theme-for-stories-pk-with-strong-typography-spacing-and-subtle-animations-e-g-hover-press-states-soft-section-transitions-choose-a-clean-editorial-style-avoid-blue-purple-as-primary-colors-and-apply-it-consistently-across-all-pages-and-components",
+      "title": "Implement a cohesive professional light theme for stories.pk with strong typography, spacing, and subtle animations (e.g., hover/press states, soft section transitions). Choose a clean editorial style (avoid blue/purple as primary colors) and apply it consistently across all pages and components.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-home-page-add-a-hero-section-with-a-short-tagline-description-for-stories-pk-plus-a-featured-stories-preview-section-that-links-to-the-stories-page-and-individual-story-detail-pages-and-include-a-clear-call-to-action-area-with-buttons-linking-to-contact-and-optionally-a-placeholder-subscribe-action-if-no-backend-subscription-exists",
+      "title": "Home page: add a hero section with a short tagline/description for stories.pk, plus a Featured Stories preview section that links to the Stories page and individual Story Detail pages, and include a clear call-to-action area with buttons linking to Contact (and optionally a placeholder Subscribe action if no backend subscription exists).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-stories-page-implement-a-grid-list-of-stories-with-a-search-input-and-at-least-one-simple-filter-control-e-g-category-tags-search-filter-should-update-the-visible-list-client-side-and-be-usable-on-mobile",
+      "title": "Stories page: implement a grid/list of stories with a search input and at least one simple filter control (e.g., category/tags). Search/filter should update the visible list client-side and be usable on mobile.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-story-detail-page-render-a-full-story-view-title-author-byline-optional-date-optional-body-content-based-on-the-selected-story-from-the-listing-include-a-back-link-to-stories-and-ensure-the-page-renders-a-helpful-story-not-found-state-for-unknown-slugs-ids",
+      "title": "Story Detail page: render a full story view (title, author/byline optional, date optional, body content) based on the selected story from the listing. Include a back link to Stories and ensure the page renders a helpful “Story not found” state for unknown slugs/ids.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-about-page-create-a-clean-informational-page-describing-the-website-mission-and-optionally-a-small-creator-team-section-keep-copy-in-english-and-match-the-site-s-professional-styling",
+      "title": "About page: create a clean informational page describing the website/mission (and optionally a small “Creator/Team” section). Keep copy in English and match the site’s professional styling.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-contact-page-display-the-provided-contact-details-and-include-a-contact-form-with-fields-for-name-email-and-message-on-submit-store-the-message-in-the-backend-canister-and-show-a-success-error-status-in-the-ui",
+      "title": "Contact page: display the provided contact details and include a contact form with fields for name, email, and message. On submit, store the message in the backend canister and show a success/error status in the UI.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-footer-add-a-site-wide-footer-including-quick-links-to-home-stories-about-contact-a-placeholder-area-for-social-media-links-only-if-user-provides-urls-later-otherwise-render-the-section-as-empty-hidden-and-a-copyright-notice-for-stories-pk",
+      "title": "Footer: add a site-wide footer including quick links to Home/Stories/About/Contact, a placeholder area for social media links (only if user provides URLs later; otherwise render the section as empty/hidden), and a copyright notice for stories.pk.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-seed-initial-story-content-for-the-stories-listing-detail-experience-minimum-8-stories-using-a-simple-static-dataset-in-the-frontend-title-slug-id-excerpt-category-tags-and-body-ensure-search-filter-operates-on-this-dataset",
+      "title": "Seed initial story content for the Stories listing/detail experience (minimum 8 stories) using a simple static dataset in the frontend (title, slug/id, excerpt, category/tags, and body). Ensure search/filter operates on this dataset.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-brand-images-as-static-assets-under-frontend-public-assets-generated-and-use-them-in-the-ui-a-simple-wordmark-logo-for-the-header-and-a-light-editorial-hero-banner-image-for-the-home-hero-section",
+      "title": "Add generated brand images as static assets under frontend/public/assets/generated and use them in the UI: a simple wordmark logo for the header and a light editorial hero banner image for the Home hero section.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-terms-conditions-page-route-e-g-terms-and-render-the-provided-professional-terms-conditions-copy-in-a-clean-readable-layout-with-headings-and-numbered-sections",
+      "title": "Add a new Terms & Conditions page route (e.g., /terms) and render the provided professional Terms & Conditions copy in a clean, readable layout with headings and numbered sections.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-navigation-entry-points-to-the-terms-conditions-page-from-site-navigation-header-and-footer-consistent-with-existing-navigation-styling",
+      "title": "Add navigation entry points to the Terms & Conditions page from site navigation (header and footer), consistent with existing navigation styling.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-hero-banner-content-to-match-the-requested-banner-concept-headline-text-explore-amazing-stories-every-day-a-primary-cta-button-labeled-read-stories-linking-to-the-stories-page-and-a-light-clean-background-treatment-with-subtle-abstract-shapes-or-gradient",
+      "title": "Update the Home page hero/banner content to match the requested banner concept: headline text “Explore Amazing Stories Every Day”, a primary CTA button labeled “Read Stories” linking to the Stories page, and a light/clean background treatment with subtle abstract shapes or gradient.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-optional-featured-stories-motion-element-on-the-home-banner-either-a-small-animation-or-a-lightweight-carousel-that-previews-2-3-featured-stories-and-allows-navigation-to-their-detail-pages",
+      "title": "Implement the optional featured-stories motion element on the Home banner: either a small animation or a lightweight carousel that previews 2–3 featured stories and allows navigation to their detail pages.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-dedicated-signup-and-login-pages-that-use-internet-identity-authentication-and-redirect-the-user-to-an-appropriate-page-after-successful-authentication",
+      "title": "Add dedicated Signup and Login pages that use Internet Identity authentication and redirect the user to an appropriate page after successful authentication.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create multi-page site structure: Home, Stories, About, Contact with shared header/footer navigation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement light/clean professional theme with good typography, spacing, and subtle animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Home page with hero section, featured stories preview linking to Stories page, and call-to-action (Subscribe/Contact)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Stories page with grid/list of stories and search/filter for navigation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Story detail page for each story (click-through from stories listing)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Contact page showing phone/email and a contact form for direct messages",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Footer with quick links to all pages, social media links (if any), and copyright notice",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add a Terms & Conditions page with professional legal copy and contact email",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Update Home page hero/banner to include tagline text (“Explore Amazing Stories Every Day”), CTA button to Stories, and optional featured-stories animation/carousel",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add dedicated Signup and Login pages with redirecting behavior after authentication",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "stories.pk",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

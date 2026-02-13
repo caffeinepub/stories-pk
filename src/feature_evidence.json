@@ -1,0 +1,101 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-new-terms-conditions-page-route-e-g-terms-and-render-the-provided-professional-terms-conditions-copy-in-a-clean-readable-layout-with-headings-and-numbered-sections",
+      "featureTitle": "Add a new Terms & Conditions page route (e.g., /terms) and render the provided professional Terms & Conditions copy in a clean, readable layout with headings and numbered sections.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/TermsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-navigation-entry-points-to-the-terms-conditions-page-from-site-navigation-header-and-footer-consistent-with-existing-navigation-styling",
+      "featureTitle": "Add navigation entry points to the Terms & Conditions page from site navigation (header and footer), consistent with existing navigation styling.",
+      "files": [
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-home-page-hero-banner-content-to-match-the-requested-banner-concept-headline-text-explore-amazing-stories-every-day-a-primary-cta-button-labeled-read-stories-linking-to-the-stories-page-and-a-light-clean-background-treatment-with-subtle-abstract-shapes-or-gradient",
+      "featureTitle": "Update the Home page hero/banner content to match the requested banner concept: headline text “Explore Amazing Stories Every Day”, a primary CTA button labeled “Read Stories” linking to the Stories page, and a light/clean background treatment with subtle abstract shapes or gradient.",
+      "files": [
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-optional-featured-stories-motion-element-on-the-home-banner-either-a-small-animation-or-a-lightweight-carousel-that-previews-2-3-featured-stories-and-allows-navigation-to-their-detail-pages",
+      "featureTitle": "Implement the optional featured-stories motion element on the Home banner: either a small animation or a lightweight carousel that previews 2–3 featured stories and allows navigation to their detail pages.",
+      "files": [
+        "frontend/src/components/home/FeaturedStoriesCarousel.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-dedicated-signup-and-login-pages-that-use-internet-identity-authentication-and-redirect-the-user-to-an-appropriate-page-after-successful-authentication",
+      "featureTitle": "Add dedicated Signup and Login pages that use Internet Identity authentication and redirect the user to an appropriate page after successful authentication.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/pages/LoginPage.tsx",
+        "frontend/src/pages/SignupPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

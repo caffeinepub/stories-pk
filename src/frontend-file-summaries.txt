@@ -1,0 +1,22 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with routes for Home, Stories, Story Detail, About, Contact, Terms, Login, and Signup pages, all wrapped in a shared SiteLayout.",
+  "frontend/src/components/layout/SiteLayout.tsx": "Shared layout wrapper component that renders the persistent Header and Footer around routed page content using Outlet.",
+  "frontend/src/components/layout/Header.tsx": "Responsive header component with logo, desktop navigation menu including Terms link, Login/Signup buttons, and mobile hamburger menu with all navigation entries.",
+  "frontend/src/components/layout/Footer.tsx": "Site-wide footer with quick links including Terms & Conditions, brand information, and attribution to caffeine.ai with proper UTM tracking.",
+  "frontend/src/pages/HomePage.tsx": "Home page featuring an updated hero section with \"Explore Amazing Stories Every Day\" headline, \"Read Stories\" CTA, subtle gradient background, embedded featured stories carousel, and existing featured stories and CTA sections.",
+  "frontend/src/pages/StoriesPage.tsx": "Stories listing page with search input, category filter dropdown, active filter badges, and responsive grid of story cards.",
+  "frontend/src/pages/StoryDetailPage.tsx": "Story detail page that displays full story content with metadata, back navigation, and friendly not-found state for invalid slugs.",
+  "frontend/src/pages/AboutPage.tsx": "About page with mission statement, values section with icons, and creator information in a clean editorial layout.",
+  "frontend/src/pages/ContactPage.tsx": "Contact page displaying phone and email information alongside a validated contact form that submits to the backend.",
+  "frontend/src/components/stories/StoryCard.tsx": "Reusable story preview card component with title, excerpt, category badge, date, tags, and read more link.",
+  "frontend/src/data/stories.ts": "Static dataset of 8 stories with helper functions for filtering, featured stories, and category extraction.",
+  "frontend/src/hooks/useStoriesFilter.ts": "Custom hook that filters stories by search query and category using useMemo for performance.",
+  "frontend/src/hooks/useContactSubmit.ts": "Custom hook managing contact form submission state and backend actor interaction for message submission.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching messages from the backend (included for completeness though not used in current UI).",
+  "frontend/src/index.css": "Global styles with OKLCH-based light editorial color system, typography settings, focus states, and smooth transitions.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom color tokens, Inter and Merriweather fonts, custom shadows, and animation utilities.",
+  "frontend/src/pages/TermsPage.tsx": "Terms & Conditions page displaying professional legal copy with numbered sections covering Use of Content, User Conduct, Intellectual Property, Privacy, Disclaimer, Modifications, and Contact information with email link.",
+  "frontend/src/pages/LoginPage.tsx": "Dedicated login page with Internet Identity authentication that shows a sign-in form, handles already-authenticated state using the correct isLoginError helper, and redirects to home after successful login.",
+  "frontend/src/pages/SignupPage.tsx": "Dedicated signup page with Internet Identity authentication that shows a sign-up form, handles already-authenticated state using the correct isLoginError helper, and redirects to home after successful signup.",
+  "frontend/src/components/home/FeaturedStoriesCarousel.tsx": "Compact featured stories carousel component with manual navigation controls, keyboard-accessible buttons, and clickable story previews that link to detail pages."
+}

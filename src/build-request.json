@@ -1,0 +1,127 @@
+{
+  "kind": "build_request",
+  "title": "Add Terms & Conditions page, update Home banner, and add dedicated Signup/Login pages (Internet Identity redirects)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "text": "Add a new Terms & Conditions page route (e.g., /terms) and render the provided professional Terms & Conditions copy in a clean, readable layout with headings and numbered sections.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Terms & Conditions Page (Professional Version)\nTerms & Conditions for stories.com\nEffective Date: [Insert Date]\nWelcome to stories.com..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigating to /terms renders a Terms & Conditions page within the shared SiteLayout (header + footer).",
+        "The page displays the exact sections provided by the user (Use of Content, User Conduct, Intellectual Property, Privacy, Disclaimer, Modifications, Contact) with clear typography and spacing.",
+        "The page includes the line \"Effective Date: [Insert Date]\" as shown in the user-provided text (unless the app already has a configured effective date).",
+        "The page includes the contact email link: meesamali6829@gmail.com."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Add navigation entry points to the Terms & Conditions page from site navigation (header and footer), consistent with existing navigation styling.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "I want add Terms & Conditions Page..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header navigation includes a \"Terms\" (or \"Terms & Conditions\") link that routes to /terms on desktop and mobile menus.",
+        "Footer \"Quick Links\" includes a link to the Terms & Conditions page.",
+        "All new links use the existing TanStack Router Link components and match current hover/active styling patterns."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Update the Home page hero/banner content to match the requested banner concept: headline text “Explore Amazing Stories Every Day”, a primary CTA button labeled “Read Stories” linking to the Stories page, and a light/clean background treatment with subtle abstract shapes or gradient.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Homepage Stories Banner Idea\nBanner Concept:\nBackground: Clean white/light theme with subtle abstract shapes or gradient\nText: “Explore Amazing Stories Every Day”\nCTA Button: “Read Stories” → Links to Stories page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home page hero headline displays exactly: “Explore Amazing Stories Every Day”.",
+        "Home page hero primary CTA button label displays exactly: “Read Stories” and navigates to /stories.",
+        "Hero background follows a clean light theme with a subtle abstract/gradient treatment (no heavy/distracting visuals), consistent with the existing site theme.",
+        "Existing Home page sections below the hero (e.g., featured stories and CTA) remain accessible and visually consistent after the update."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Implement the optional featured-stories motion element on the Home banner: either a small animation or a lightweight carousel that previews 2–3 featured stories and allows navigation to their detail pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Optional: Small animation or carousel showing 2–3 featured stories"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Home hero includes a compact animated element or carousel that shows 2–3 featured stories sourced from the existing featured stories dataset.",
+        "Each preview item can be clicked/tapped to navigate to the correct story detail route.",
+        "The motion/animation is subtle (no autoplay that disrupts reading), works on mobile, and respects existing accessibility expectations (e.g., controls are keyboard reachable if present)."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Add dedicated Signup and Login pages that use Internet Identity authentication and redirect the user to an appropriate page after successful authentication.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Add dedicated model signup and Login page internet redrecting"
+        ]
+      },
+      "acceptanceCriteria": [
+        "There is a dedicated Login page route (e.g., /login) with clear English UI text and a login action that triggers Internet Identity authentication using the existing Internet Identity hook.",
+        "There is a dedicated Signup page route (e.g., /signup) that also triggers Internet Identity authentication (signup can be presented as the same Internet Identity flow, but must be a separate page/route).",
+        "After a successful login/signup, the app redirects the user (at minimum: back to Home or to the page the user originally attempted to access, if that context is available).",
+        "If the user is already authenticated and visits /login or /signup, the UI shows an authenticated state (e.g., “You are already signed in”) and provides a clear navigation option (e.g., go to Home/Stories).",
+        "Header navigation exposes entry points to Login and Signup pages (desktop and mobile) without breaking existing nav layout."
+      ]
+    }
+  ],
+  "constraints": [
+    "Respect the existing single-actor backend architecture; no additional canisters/services.",
+    "Do not edit files under frontend/src/components/ui or other immutablePaths listed in SYSTEM_CONTEXT; compose existing UI components instead.",
+    "Use English for all user-facing UI text added by these changes.",
+    "Do not introduce third-party authentication beyond Internet Identity."
+  ],
+  "nonGoals": [
+    "Implementing custom username/password authentication.",
+    "Adding user-generated story posting or moderation tooling.",
+    "Adding email verification or password reset flows.",
+    "Changing existing contact-form backend storage behavior."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

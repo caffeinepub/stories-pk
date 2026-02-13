@@ -1,0 +1,39 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T14:42:33.911Z",
+  "summary": "Implemented new /terms, /login, and /signup routes/pages; updated Home hero/banner to requested headline/CTA with subtle gradient background; added a manual featured-stories carousel; added Header/Footer navigation entries. Some acceptance-criteria details are not fully met (mobile nav link implementation and post-auth redirect behavior).",
+  "missing_requirements": [
+    {
+      "id": "REQ-12",
+      "requirement": "All new navigation links (including mobile menu) should use TanStack Router <Link> components and match existing hover/active styling patterns; header must include a Terms link on both desktop and mobile menus.",
+      "reason": "Header desktop uses <Link>, but the mobile menu renders navigation items as <button> elements that call navigate() rather than using TanStack Router <Link> components (including the Terms entry). This does not meet the AC requirement that new links use the existing Link components on desktop and mobile.",
+      "evidence": [
+        "frontend/src/components/layout/Header.tsx"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "requirement": "After successful login/signup, redirect the user to an appropriate page (at minimum Home, or the originally attempted page if that context is available).",
+      "reason": "Login and Signup pages always redirect to '/' after successful authentication; there is no evidence of capturing/using an attempted-route context for redirecting back to the originally requested page.",
+      "evidence": [
+        "frontend/src/pages/LoginPage.tsx",
+        "frontend/src/pages/SignupPage.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.78,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/App.tsx",
+    "frontend/src/components/home/FeaturedStoriesCarousel.tsx",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/LoginPage.tsx",
+    "frontend/src/pages/SignupPage.tsx",
+    "frontend/src/pages/TermsPage.tsx",
+    "project_state.json"
+  ]
+}
