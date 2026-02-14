@@ -49,6 +49,7 @@ export default {
                     DEFAULT: 'oklch(var(--card))',
                     foreground: 'oklch(var(--card-foreground))'
                 },
+                gold: 'oklch(var(--gold))',
                 chart: {
                     1: 'oklch(var(--chart-1))',
                     2: 'oklch(var(--chart-2))',
@@ -73,6 +74,7 @@ export default {
                     'sans-serif'
                 ],
                 serif: [
+                    'Playfair Display',
                     'Merriweather',
                     'Georgia',
                     'Cambria',
@@ -82,7 +84,9 @@ export default {
             },
             boxShadow: {
                 xs: '0 1px 2px 0 rgba(0,0,0,0.05)',
-                soft: '0 2px 8px -2px rgba(0,0,0,0.1), 0 6px 20px -3px rgba(0,0,0,0.1)'
+                soft: '0 2px 8px -2px rgba(0,0,0,0.1), 0 6px 20px -3px rgba(0,0,0,0.1)',
+                luxury: '0 10px 40px -10px rgba(0,0,0,0.15), 0 2px 8px -2px rgba(0,0,0,0.1)',
+                'luxury-hover': '0 20px 60px -15px rgba(0,0,0,0.25), 0 8px 16px -4px rgba(0,0,0,0.15)'
             },
             keyframes: {
                 'accordion-down': {
@@ -96,12 +100,17 @@ export default {
                 'fade-in': {
                     from: { opacity: '0', transform: 'translateY(10px)' },
                     to: { opacity: '1', transform: 'translateY(0)' }
+                },
+                'lift': {
+                    from: { transform: 'translateY(0)' },
+                    to: { transform: 'translateY(-8px)' }
                 }
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
-                'fade-in': 'fade-in 0.5s ease-out'
+                'fade-in': 'fade-in 0.5s ease-out',
+                'lift': 'lift 0.3s ease-out'
             }
         }
     },

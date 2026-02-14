@@ -13,6 +13,7 @@ export default function Header() {
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
     { label: 'Terms', path: '/terms' },
+    { label: 'Privacy Policy', path: '/privacy' },
   ];
 
   const handleNavClick = (path: string) => {

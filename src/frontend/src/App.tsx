@@ -6,6 +6,7 @@ import StoryDetailPage from './pages/StoryDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 
@@ -49,6 +50,12 @@ const termsRoute = createRoute({
   component: TermsPage,
 });
 
+const privacyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/privacy',
+  component: PrivacyPage,
+});
+
 const loginRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/login',
@@ -68,6 +75,7 @@ const routeTree = rootRoute.addChildren([
   aboutRoute,
   contactRoute,
   termsRoute,
+  privacyRoute,
   loginRoute,
   signupRoute,
 ]);

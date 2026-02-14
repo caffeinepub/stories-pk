@@ -11,6 +11,7 @@ export default function Footer() {
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
     { label: 'Terms & Conditions', path: '/terms' },
+    { label: 'Privacy Policy', path: '/privacy' },
   ];
 
   // Social links - only render if URLs are configured

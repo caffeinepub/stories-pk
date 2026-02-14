@@ -1,119 +1,22 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Terms page, Home hero refresh with featured carousel, and dedicated Login/Signup routes (Internet Identity)",
+  "title": "Home Explore by Category: solid minimal black-and-white icons",
   "requirements": [
     {
-      "id": "REQ-11",
-      "summary": "Add a /terms route and render the provided Terms & Conditions copy with clear headings and numbered sections.",
+      "id": "REQ-24",
+      "summary": "Replace Home “Explore by Category” sub-icons with a consistent solid/filled, minimal black-and-white icon set while preserving the existing grid/card layout and copy.",
       "acceptanceCriteria": [
-        "Navigating to /terms renders a Terms & Conditions page within the shared SiteLayout (header + footer).",
-        "The page displays the exact sections provided by the user (Use of Content, User Conduct, Intellectual Property, Privacy, Disclaimer, Modifications, Contact) with clear typography and spacing.",
-        "The page includes the line \"Effective Date: [Insert Date]\" as shown in the user-provided text (unless the app already has a configured effective date).",
-        "The page includes the contact email link: meesamali6829@gmail.com."
+        "On the Home page, the “Explore by Category” section renders the same grid layout as before (same column behavior, card structure, spacing, and typography).",
+        "All category icons appear as solid/filled, minimal, and consistent in style (no mixed outline vs solid styles).",
+        "Icons use a black-and-white presentation consistent with the luxury theme (no colored accents for the icon glyphs).",
+        "No other Home page sections (Hero, Featured Stories, About, Newsletter) or other routes/pages are visually or functionally changed."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/TermsPage.tsx",
-          "operation": "create",
-          "description": "Create a Terms & Conditions page that renders the user-provided professional Terms & Conditions copy with semantic headings, numbered sections, and a mailto link to meesamali6829@gmail.com; compose layout using existing Tailwind styles and shadcn-ui typography-friendly primitives if needed (e.g., Card) without editing ui components. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/home/HomeCategoriesGrid.tsx",
           "operation": "modify",
-          "description": "Register a new TanStack Router route for /terms and wire it into the existing routeTree so it renders within SiteLayout. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "summary": "Add header and footer navigation links to the Terms & Conditions page using existing TanStack Router link patterns.",
-      "acceptanceCriteria": [
-        "Header navigation includes a \"Terms\" (or \"Terms & Conditions\") link that routes to /terms on desktop and mobile menus.",
-        "Footer \"Quick Links\" includes a link to the Terms & Conditions page.",
-        "All new links use the existing TanStack Router Link components and match current hover/active styling patterns."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/layout/Header.tsx",
-          "operation": "modify",
-          "description": "Add a new navigation entry for /terms (label \"Terms\" or \"Terms & Conditions\") to the existing desktop Button-as-Link nav and mobile menu list, keeping current styling/behavior. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/layout/Footer.tsx",
-          "operation": "modify",
-          "description": "Add a Terms/Terms & Conditions entry to the existing Quick Links list, using the TanStack Router Link and matching current hover styling. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "summary": "Update the Home page hero/banner headline, primary CTA, and background treatment to match the requested concept while keeping existing sections intact.",
-      "acceptanceCriteria": [
-        "Home page hero headline displays exactly: “Explore Amazing Stories Every Day”.",
-        "Home page hero primary CTA button label displays exactly: “Read Stories” and navigates to /stories.",
-        "Hero background follows a clean light theme with a subtle abstract/gradient treatment (no heavy/distracting visuals), consistent with the existing site theme.",
-        "Existing Home page sections below the hero (e.g., featured stories and CTA) remain accessible and visually consistent after the update."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Update hero headline text to exactly “Explore Amazing Stories Every Day”; update primary CTA button label to exactly “Read Stories” linking to /stories; adjust hero container background to a light/clean subtle abstract/gradient treatment consistent with current Tailwind theme; ensure existing sections below the hero remain unchanged in structure/access. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "summary": "Add a compact, subtle featured-stories motion element (carousel/animation) inside the Home hero that links to story detail pages.",
-      "acceptanceCriteria": [
-        "The Home hero includes a compact animated element or carousel that shows 2–3 featured stories sourced from the existing featured stories dataset.",
-        "Each preview item can be clicked/tapped to navigate to the correct story detail route.",
-        "The motion/animation is subtle (no autoplay that disrupts reading), works on mobile, and respects existing accessibility expectations (e.g., controls are keyboard reachable if present)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/home/FeaturedStoriesCarousel.tsx",
-          "operation": "create",
-          "description": "Create a small, lightweight featured-stories carousel component that consumes the existing getFeaturedStories() data and renders 2–3 preview items linking to the story detail route (/stories/$slug); include subtle transition (e.g., CSS-based) with explicit next/previous controls that are keyboard reachable and no disruptive autoplay. Use existing TanStack Router Link and optionally shadcn-ui Button/Card for consistent UI. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Wire the new FeaturedStoriesCarousel into the Home hero area (not below the fold), passing featured stories from the existing dataset and ensuring click navigates to the correct detail route; keep motion subtle and mobile-friendly. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-15",
-      "summary": "Add dedicated /login and /signup routes that trigger Internet Identity authentication and redirect appropriately after success; expose header entry points.",
-      "acceptanceCriteria": [
-        "There is a dedicated Login page route (e.g., /login) with clear English UI text and a login action that triggers Internet Identity authentication using the existing Internet Identity hook.",
-        "There is a dedicated Signup page route (e.g., /signup) that also triggers Internet Identity authentication (signup can be presented as the same Internet Identity flow, but must be a separate page/route).",
-        "After a successful login/signup, the app redirects the user (at minimum: back to Home or to the page the user originally attempted to access, if that context is available).",
-        "If the user is already authenticated and visits /login or /signup, the UI shows an authenticated state (e.g., “You are already signed in”) and provides a clear navigation option (e.g., go to Home/Stories).",
-        "Header navigation exposes entry points to Login and Signup pages (desktop and mobile) without breaking existing nav layout."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/LoginPage.tsx",
-          "operation": "create",
-          "description": "Create a dedicated /login page that uses the existing useInternetIdentity() hook to trigger Internet Identity login on user action; show clear English UI, handle already-authenticated state, and redirect after successful authentication (default Home; optionally honor a redirect/search param if available). Compose UI with existing Tailwind styling and shadcn-ui Button/Card where appropriate. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/SignupPage.tsx",
-          "operation": "create",
-          "description": "Create a dedicated /signup page with similar UX to /login but tailored copy for signing up; use the same Internet Identity login flow via useInternetIdentity(); show already-authenticated state and redirect on success (default Home; optionally honor a redirect/search param if available). Compose UI with existing Tailwind styling and shadcn-ui components. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Register TanStack Router routes for /login and /signup and add them to the routeTree so they render within SiteLayout. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/layout/Header.tsx",
-          "operation": "modify",
-          "description": "Add header navigation entry points for /login and /signup in both desktop and mobile navigation, using existing TanStack Router Link patterns and maintaining current styling/layout. Verify the component's usage instructions before implementing."
+          "description": "Remove the current mixed-outline lucide-react icons and replace them with a cohesive set of solid/filled minimal SVG icon components (e.g., local React components in this file) mapped 1:1 to the existing categories; update only icon-related styling to use black-and-white (e.g., text-foreground / bg-foreground opacity) while keeping the existing grid/card structure, spacing, category count/order, and text content unchanged."
         }
       ]
     }

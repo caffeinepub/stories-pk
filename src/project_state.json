@@ -1,16 +1,22 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
-  "summary": "Expand stories.pk from a basic multi-page stories site to include a legal Terms & Conditions page, an updated Home hero/banner concept, and dedicated Signup/Login pages with redirect behavior.",
+  "projectStateVersion": 13,
+  "summary": "Refine the Home page only: keep the luxury layout but shift to a clean, elegant black-and-white professional look by removing only story thumbnail images from Featured Story cards, updating “Read Stories”/“Read More” buttons to solid black with white text, and updating the “Explore by Category” section icons to solid, clean, minimal black-and-white icons (icon style only; no layout changes).",
   "architectural_notes": [
     "Site name: stories.pk",
     "Primary pages: Home, Stories (listing + detail), About, Contact",
     "Design direction: light/clean theme; professional layout; subtle animations",
     "Add new legal page route: Terms & Conditions (/terms).",
-    "Add authentication routes/pages: Signup and Login with redirect after success."
+    "Add authentication routes/pages: Signup and Login with redirect after success.",
+    "Add new legal page route: Privacy Policy (/privacy).",
+    "Homepage UI spec includes: sticky top navbar with center links (Home/Stories/Categories/About/Contact) and right-side search icon + Subscribe CTA; homepage sections: Luxury Hero, Featured Stories, Categories, About, Newsletter strip, Luxury Footer (with Privacy/Terms).",
+    "Homepage refinement: Featured Stories cards should be text-only (remove only thumbnail images; keep card layout/content otherwise unchanged).",
+    "Homepage CTA styling: “Read Stories” and “Read More” buttons use solid black background with white text for a clean black-and-white look.",
+    "Homepage refinement: “Explore by Category” sub-icons should be solid, clean, minimal, professional icons consistent with the black-and-white luxury theme; do not change layout—icon style only."
   ],
   "known_issues": [
-    "User-provided Terms & Conditions copy references stories.com, but project/site name is stories.pk (domain/content inconsistency to resolve)."
+    "User-provided Terms & Conditions copy references stories.com, but project/site name is stories.pk (domain/content inconsistency to resolve).",
+    "Homepage copy drafts include 'Stories.com' (About/footer). Must be updated to 'stories.pk' for domain/content consistency."
   ],
   "isFixRequest": false,
   "existing_features": [
@@ -133,6 +139,78 @@
         "REQ-15"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-a-new-privacy-policy-page-route-at-privacy-and-render-the-provided-privacy-policy-stories-pk-copy-in-a-clean-readable-layout-with-headings-and-numbered-sections-matching-the-overall-styling-used-by-the-existing-terms-page",
+      "title": "Add a new Privacy Policy page route at \"/privacy\" and render the provided \"Privacy Policy – Stories.pk\" copy in a clean, readable layout with headings and numbered sections (matching the overall styling used by the existing Terms page).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-navigation-entry-points-to-the-new-privacy-policy-page-from-the-site-header-navigation-desktop-and-mobile-menus-and-from-the-footer-quick-links-consistent-with-existing-navigation-styling",
+      "title": "Add navigation entry points to the new Privacy Policy page from the site header navigation (desktop and mobile menus) and from the footer quick links, consistent with existing navigation styling.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-only-the-home-page-route-into-a-world-class-high-end-luxury-style-layout-while-keeping-all-other-pages-unchanged-the-home-page-must-include-these-sections-in-this-order-1-premium-hero-banner-with-headline-where-stories-come-to-life-subtext-discover-powerful-narratives-timeless-wisdom-and-stories-that-inspire-the-world-and-two-ctas-read-stories-links-to-stories-and-explore-categories-scrolls-to-the-categories-section-on-the-same-page-2-featured-stories-section-with-a-3-column-grid-on-desktop-3-categories-section-with-a-clean-icon-category-name-grid-on-a-light-background-4-about-promo-section-with-an-image-and-the-provided-mission-copy-and-a-learn-more-button-links-to-about-5-newsletter-strip-with-a-dark-background-and-email-field-subscribe-button-placeholder-interaction-no-backend-the-visual-style-must-feel-premium-modern-elegant-with-a-clean-white-base-black-typography-subtle-shadows-refined-spacing-and-a-luxury-accent-color-deep-blue-royal-purple",
+      "title": "Redesign only the Home page (\"/\" route) into a world-class, high-end, luxury-style layout while keeping all other pages unchanged. The Home page must include these sections in this order: (1) Premium Hero banner with headline “Where Stories Come to Life.”, subtext “Discover powerful narratives, timeless wisdom, and stories that inspire the world.”, and two CTAs: “Read Stories” (links to /stories) and “Explore Categories” (scrolls to the Categories section on the same page); (2) Featured Stories section with a 3-column grid on desktop; (3) Categories section with a clean icon + category name grid on a light background; (4) About promo section with an image and the provided mission copy and a “Learn More” button (links to /about); (5) Newsletter strip with a dark background and email field + “Subscribe” button (placeholder interaction, no backend). The visual style must feel premium/modern/elegant with a clean white base, black typography, subtle shadows, refined spacing, and a luxury accent color (Deep Blue / Royal Purple).",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-premium-card-styling-and-micro-interactions-on-the-home-page-for-the-featured-stories-grid-each-card-must-include-a-thumbnail-image-story-title-a-2-line-preview-and-a-read-more-button-with-a-soft-shadow-rounded-corners-and-a-hover-animation-subtle-lift-shadow-this-design-should-be-limited-to-the-home-page-do-not-alter-the-existing-stories-listing-cards-unless-required-for-the-home-page-only",
+      "title": "Implement premium card styling and micro-interactions on the Home page for the Featured Stories grid: each card must include a thumbnail image, story title, a 2-line preview, and a “Read More” button, with a soft shadow, rounded corners, and a hover animation (subtle lift + shadow). This design should be limited to the Home page (do not alter the existing Stories listing cards unless required for the Home page only).",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-or-update-the-static-home-page-imagery-so-the-hero-and-home-page-sections-look-premium-and-storytelling-focused-use-generated-static-assets-under-frontend-public-assets-generated-and-ensure-the-new-images-are-referenced-directly-from-the-home-page-no-backend-image-serving",
+      "title": "Add or update the static Home page imagery so the hero and Home page sections look premium and storytelling-focused. Use generated static assets under frontend/public/assets/generated and ensure the new images are referenced directly from the Home page (no backend image serving).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-featured-stories-cards-to-remove-only-the-story-thumbnail-images-do-not-remove-any-other-card-content-or-change-layout-typography-beyond-what-is-necessary-to-account-for-the-missing-image-this-should-apply-only-to-the-home-page-featured-story-cards-and-must-not-affect-story-cards-used-on-other-pages-e-g-the-stories-listing",
+      "title": "Update the Home page Featured Stories cards to remove only the story thumbnail images (do not remove any other card content or change layout/typography beyond what is necessary to account for the missing image). This should apply only to the Home page featured story cards and must not affect story cards used on other pages (e.g., the /stories listing).",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-restyle-the-home-page-hero-primary-cta-button-labeled-read-stories-to-use-a-solid-black-background-with-white-text-including-appropriate-hover-focus-styles-while-keeping-the-button-size-placement-and-behavior-unchanged",
+      "title": "Restyle the Home page hero primary CTA button labeled “Read Stories” to use a solid black background with white text (including appropriate hover/focus styles) while keeping the button size, placement, and behavior unchanged.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-restyle-the-home-page-featured-stories-card-cta-button-labeled-read-more-to-use-a-solid-black-background-with-white-text-including-appropriate-hover-focus-styles-while-keeping-the-existing-icon-and-navigation-behavior-unchanged",
+      "title": "Restyle the Home page Featured Stories card CTA button labeled “Read More” to use a solid black background with white text (including appropriate hover/focus styles) while keeping the existing icon and navigation behavior unchanged.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-icon-style-used-in-the-home-page-explore-by-category-section-rendered-by-frontend-src-components-home-homecategoriesgrid-tsx-so-all-category-sub-icons-look-professional-solid-filled-clean-and-minimal-in-an-elegant-black-and-white-luxury-theme-without-changing-the-existing-layout-spacing-category-count-order-or-text-content",
+      "title": "Update the icon style used in the Home page “Explore by Category” section (rendered by `frontend/src/components/home/HomeCategoriesGrid.tsx`) so all category sub-icons look professional, solid/filled, clean, and minimal in an elegant black-and-white luxury theme, without changing the existing layout, spacing, category count/order, or text content.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -193,6 +271,36 @@
     {
       "id": "AR-10",
       "summary": "Add dedicated Signup and Login pages with redirecting behavior after authentication",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Add a Privacy Policy page route (e.g., /privacy) and render the provided Privacy Policy copy in a clean, readable layout with headings/sections",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Add navigation entry points to the Privacy Policy page from site navigation (header and footer), consistent with existing navigation styling",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Redesign the Home page with a premium/luxury, international-quality layout: sticky top navbar (logo + Home/Stories/Categories/About/Contact + search icon + Subscribe button), luxury hero banner (“Where Stories Come to Life.” + subtext + Read Stories/Explore Categories + elegant image), Featured Stories grid with premium cards/hover lift, Categories grid, About section, dark newsletter strip, and luxury footer with legal links + contact info",
+      "reqIds": [],
+      "status": "in_progress"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Homepage polish: remove only story thumbnail images from story cards and restyle “Read Stories”/“Read More” buttons to solid black with white text (black-and-white professional look)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Homepage: update “Explore by Category” sub-icons to solid, clean, minimal professional black-and-white icons (icon style only; keep layout unchanged)",
       "reqIds": [],
       "status": "pending"
     }
