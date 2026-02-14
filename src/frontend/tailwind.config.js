@@ -15,6 +15,10 @@ export default {
             }
         },
         extend: {
+            fontFamily: {
+                serif: ['Playfair Display', 'Georgia', 'serif'],
+                sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+            },
             colors: {
                 border: 'oklch(var(--border))',
                 input: 'oklch(var(--input))',
@@ -34,11 +38,11 @@ export default {
                     foreground: 'oklch(var(--destructive-foreground))'
                 },
                 muted: {
-                    DEFAULT: 'oklch(var(--muted) / <alpha-value>)',
-                    foreground: 'oklch(var(--muted-foreground) / <alpha-value>)'
+                    DEFAULT: 'oklch(var(--muted))',
+                    foreground: 'oklch(var(--muted-foreground))'
                 },
                 accent: {
-                    DEFAULT: 'oklch(var(--accent) / <alpha-value>)',
+                    DEFAULT: 'oklch(var(--accent))',
                     foreground: 'oklch(var(--accent-foreground))'
                 },
                 popover: {
@@ -63,54 +67,21 @@ export default {
                 md: 'calc(var(--radius) - 2px)',
                 sm: 'calc(var(--radius) - 4px)'
             },
-            fontFamily: {
-                sans: [
-                    'Inter',
-                    'system-ui',
-                    '-apple-system',
-                    'BlinkMacSystemFont',
-                    'Segoe UI',
-                    'Roboto',
-                    'sans-serif'
-                ],
-                serif: [
-                    'Playfair Display',
-                    'Merriweather',
-                    'Georgia',
-                    'Cambria',
-                    'Times New Roman',
-                    'serif'
-                ]
-            },
             boxShadow: {
-                xs: '0 1px 2px 0 rgba(0,0,0,0.05)',
-                soft: '0 2px 8px -2px rgba(0,0,0,0.1), 0 6px 20px -3px rgba(0,0,0,0.1)',
-                luxury: '0 10px 40px -10px rgba(0,0,0,0.15), 0 2px 8px -2px rgba(0,0,0,0.1)',
-                'luxury-hover': '0 20px 60px -15px rgba(0,0,0,0.25), 0 8px 16px -4px rgba(0,0,0,0.15)'
+                'soft': '0 2px 8px -2px rgba(0, 0, 0, 0.08), 0 4px 16px -4px rgba(0, 0, 0, 0.06)',
+                'luxury': '0 4px 20px -4px rgba(0, 0, 0, 0.12), 0 8px 32px -8px rgba(0, 0, 0, 0.08)',
+                'luxury-hover': '0 8px 32px -4px rgba(0, 0, 0, 0.16), 0 16px 48px -8px rgba(0, 0, 0, 0.12)',
+                'card-enhanced': '0 4px 16px -2px rgba(0, 0, 0, 0.1), 0 8px 24px -4px rgba(0, 0, 0, 0.08)',
+                'card-hover': '0 12px 32px -4px rgba(0, 0, 0, 0.14), 0 20px 48px -8px rgba(0, 0, 0, 0.1)'
             },
             keyframes: {
-                'accordion-down': {
-                    from: { height: '0' },
-                    to: { height: 'var(--radix-accordion-content-height)' }
-                },
-                'accordion-up': {
-                    from: { height: 'var(--radix-accordion-content-height)' },
-                    to: { height: '0' }
-                },
-                'fade-in': {
-                    from: { opacity: '0', transform: 'translateY(10px)' },
-                    to: { opacity: '1', transform: 'translateY(0)' }
-                },
                 'lift': {
-                    from: { transform: 'translateY(0)' },
-                    to: { transform: 'translateY(-8px)' }
+                    '0%': { transform: 'translateY(0) scale(1)' },
+                    '100%': { transform: 'translateY(-8px) scale(1.02)' }
                 }
             },
             animation: {
-                'accordion-down': 'accordion-down 0.2s ease-out',
-                'accordion-up': 'accordion-up 0.2s ease-out',
-                'fade-in': 'fade-in 0.5s ease-out',
-                'lift': 'lift 0.3s ease-out'
+                'lift': 'lift 0.3s ease-in-out forwards'
             }
         }
     },

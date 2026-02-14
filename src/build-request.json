@@ -1,40 +1,128 @@
 {
   "kind": "build_request",
-  "title": "Update Home “Explore by Category” icons to solid minimal black-and-white style",
+  "title": "Polish luxury UI: cinematic hero, refined navbar, deeper cards, consistent button hovers, premium font pairing",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-24",
-      "text": "Update the icon style used in the Home page “Explore by Category” section (rendered by `frontend/src/components/home/HomeCategoriesGrid.tsx`) so all category sub-icons look professional, solid/filled, clean, and minimal in an elegant black-and-white luxury theme, without changing the existing layout, spacing, category count/order, or text content.",
+      "id": "REQ-25",
+      "text": "Replace the Home page hero image with a darker, cinematic, premium-looking background and apply a soft black gradient overlay on top of the image to achieve a luxury/high-class feel.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "recent-messages-4"
+          "msg-1"
         ],
         "quotes": [
-          "Please update the “Explore by Category” section.\nI would like all the category icons (the sub-icons under Explore by Category) to have a professional look \nMake them solid clean, and minimal. Keep the design elegant and consistent with the black-and-white luxury theme. Do not change the layout — only update the icon style."
+          "Please replace the current hero image with a more cinematic and premium-looking background.\nUse a darker, high-quality image with a soft black gradient overlay to create a luxury and high-class feel."
         ]
       },
       "acceptanceCriteria": [
-        "On the Home page, the “Explore by Category” section renders the same grid layout as before (same column behavior, card structure, spacing, and typography).",
-        "All category icons appear as solid/filled, minimal, and consistent in style (no mixed outline vs solid styles).",
-        "Icons use a black-and-white presentation consistent with the luxury theme (no colored accents for the icon glyphs).",
-        "No other Home page sections (Hero, Featured Stories, About, Newsletter) or other routes/pages are visually or functionally changed."
+        "Home page hero image asset is updated to a darker, cinematic image (used as a static asset under frontend/public/assets/generated).",
+        "A soft black gradient overlay is visibly applied over the hero image without reducing text/CTA readability.",
+        "No backend image serving is introduced; the hero image is referenced directly from the Home page."
+      ]
+    },
+    {
+      "id": "REQ-26",
+      "text": "Refine the site navbar styling by increasing horizontal spacing between desktop menu items, increasing header padding, and adding a subtle drop shadow under the sticky navbar for depth while preserving existing navigation structure and behavior (desktop + mobile).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Enhance the navbar by adding slightly more spacing between menu items and increasing padding.\nAdd a subtle shadow under the navbar to give it depth and a more professional appearance."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Desktop navbar menu items have noticeably increased spacing compared to current styling, without wrapping/truncation on common viewport widths.",
+        "Header container padding is increased (or otherwise feels roomier) while keeping layout aligned within the existing max width container.",
+        "A subtle shadow appears under the navbar when viewed against page content, and the navbar remains sticky and functional on scroll.",
+        "Mobile menu open/close behavior and navigation actions remain unchanged."
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "text": "Enhance story card styling across the app by applying a slightly stronger (but still soft) shadow and adding a smooth hover interaction (subtle lift or scale) to make cards feel modern and interactive, while maintaining readability and existing content/layout.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Improve the card design by adding a slightly stronger but soft shadow to create depth.\nAlso, add a smooth hover effect (such as a subtle lift or scale effect) to make the interface feel modern and interactive."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Cards in the Stories listing (StoryCard) have a stronger soft shadow than before, without looking harsh or overly dark.",
+        "Cards in the Stories listing show a smooth hover effect (lift and/or slight scale) with an appropriate transition duration/easing.",
+        "Home page featured story cards (LuxuryFeaturedStoryCard) maintain the luxury look and also reflect the improved depth/hover interaction (consistent feel across card types).",
+        "Hover interaction does not cause layout shift that breaks the grid (no jumping content)."
+      ]
+    },
+    {
+      "id": "REQ-28",
+      "text": "Upgrade button interactions site-wide by ensuring all buttons have smooth hover animations with a 0.3s transition, consistent border radius, and styling aligned with the black luxury theme (preserving existing button variants and behaviors).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Add smooth hover animations (0.3s transition effect) to all buttons.\nEnsure consistent border radius and keep the button style aligned with the black luxury theme."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All buttons across pages have a consistent 0.3s hover transition (at minimum covering background/border/text color; include transform where applicable).",
+        "Button border radius is consistent across variants and matches the global radius token already used by the theme.",
+        "Buttons that are meant to be solid black (e.g., primary CTAs on the Home page) remain solid black with white text and have refined hover/focus states consistent with a luxury theme.",
+        "No edits are made directly inside read-only UI component source files under frontend/src/components/ui; changes are achieved via composition, styling, or global CSS/theme tokens."
+      ]
+    },
+    {
+      "id": "REQ-29",
+      "text": "Implement premium editorial font pairing by using a classy serif font for headings (e.g., Playfair Display or Cormorant) and a clean sans-serif font for body text (e.g., Inter or Poppins), and apply it consistently across all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Use a classy serif font for headings (such as Playfair Display or Cormorant) to give a premium editorial look.\nUse a clean sans-serif font (such as Inter or Poppins) for body text to maintain readability and professionalism."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Headings (h1–h6 and heading-styled components) render with the selected serif font across the site.",
+        "Body text renders with the selected sans-serif font across the site.",
+        "Fonts are loaded correctly in the app (no fallback-only rendering in typical browsers).",
+        "Typography remains readable on mobile and desktop, and existing page layouts do not break due to font changes."
       ]
     }
   ],
   "constraints": [
-    "Do not change the Home page “Explore by Category” grid/card layout; only change icon style/appearance.",
-    "Keep category names and descriptions in English and unchanged.",
-    "Limit changes to the Home page categories icons (component: `frontend/src/components/home/HomeCategoriesGrid.tsx`) and any necessary supporting styles; do not modify immutable frontend paths."
+    "Frontend must remain within the existing React + TypeScript + Tailwind + shadcn/ui + React Query stack.",
+    "Do not modify any files under frontend/src/components/ui (read-only UI component sources must be composed, not edited).",
+    "Backend is single-actor Motoko; no backend changes are required for these UI polish tasks."
   ],
   "nonGoals": [
-    "Adding/removing categories or changing their order.",
-    "Changing the “Explore by Category” heading/subheading text, card copy, or any non-icon styling beyond what is strictly necessary to support the new icon style.",
-    "Backend changes or new APIs."
+    "Do not add or change routes/pages.",
+    "Do not change Internet Identity authentication behavior.",
+    "Do not add new backend storage or APIs.",
+    "Do not redesign non-requested page layouts beyond the specified hero/navbar/cards/buttons/typography polish."
   ],
   "imageRequirements": {
     "required": [],
-    "edits": []
+    "edits": [
+      "Replace the hero background with a darker cinematic premium image (storiespk-hero-luxury.dim_1600x600.png > storiespk-hero-cinematic-dark.dim_1600x600.png)"
+    ]
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

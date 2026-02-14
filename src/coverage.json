@@ -1,24 +1,74 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T05:39:35.453Z",
+  "generatedAt": "2026-02-14T05:49:38.503Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 1,
-    "implemented": 1,
+    "total": 5,
+    "implemented": 5,
     "items": [
       {
-        "id": "REQ-24",
-        "summary": "Update the icon style used in the Home page “Explore by Category” section (rendered by `frontend/src/components/home/HomeCategoriesGrid.tsx`) so all category sub-icons look professional, solid/filled, clean, and minimal in an elegant black-and-white luxury theme, without changing the existing layout, spacing, category count/order, or text content.",
+        "id": "REQ-25",
+        "summary": "Replace the Home page hero image with a darker, cinematic, premium-looking background and apply a soft black gradient overlay on top of the image to achieve a luxury/high-class feel.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/home/HomeCategoriesGrid.tsx"
+          "frontend/public/assets/generated/storiespk-hero-cinematic-dark.dim_1600x600.png",
+          "frontend/src/pages/HomePage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/home/HomeCategoriesGrid.tsx"
+          "frontend/public/assets/generated/storiespk-hero-cinematic-dark.dim_1600x600.png",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-26",
+        "summary": "Refine the site navbar styling by increasing horizontal spacing between desktop menu items, increasing header padding, and adding a subtle drop shadow under the sticky navbar for depth while preserving existing navigation structure and behavior (desktop + mobile).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/layout/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/layout/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-27",
+        "summary": "Enhance story card styling across the app by applying a slightly stronger (but still soft) shadow and adding a smooth hover interaction (subtle lift or scale) to make cards feel modern and interactive, while maintaining readability and existing content/layout.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/stories/StoryCard.tsx",
+          "frontend/src/components/home/LuxuryFeaturedStoryCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/stories/StoryCard.tsx",
+          "frontend/src/components/home/LuxuryFeaturedStoryCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-28",
+        "summary": "Upgrade button interactions site-wide by ensuring all buttons have smooth hover animations with a 0.3s transition, consistent border radius, and styling aligned with the black luxury theme (preserving existing button variants and behaviors).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css"
+        ]
+      },
+      {
+        "id": "REQ-29",
+        "summary": "Implement premium editorial font pairing by using a classy serif font for headings (e.g., Playfair Display or Cormorant) and a clean sans-serif font for body text (e.g., Inter or Poppins), and apply it consistently across all pages.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/index.html",
+          "frontend/src/index.css"
         ]
       }
     ]
@@ -28,7 +78,14 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/home/HomeCategoriesGrid.tsx",
+    "frontend/index.html",
+    "frontend/public/assets/generated/storiespk-hero-cinematic-dark.dim_1600x600.png",
+    "frontend/src/components/home/LuxuryFeaturedStoryCard.tsx",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/components/stories/StoryCard.tsx",
+    "frontend/src/index.css",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

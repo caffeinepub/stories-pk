@@ -22,8 +22,8 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur shadow-sm supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-10">
         <Link to="/" className="flex items-center space-x-2">
           <img
             src="/assets/generated/storiespk-logo.dim_512x192.png"
@@ -33,25 +33,25 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center space-x-1 md:flex">
+        <nav className="hidden items-center space-x-2 md:flex">
           {navLinks.map((link) => (
             <Button
               key={link.path}
               variant="ghost"
               asChild
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium transition-all duration-300 hover:text-primary px-4"
             >
               <Link to={link.path}>{link.label}</Link>
             </Button>
           ))}
-          <div className="ml-2 flex items-center space-x-2 border-l border-border/40 pl-2">
-            <Button variant="ghost" size="sm" asChild>
+          <div className="ml-4 flex items-center space-x-3 border-l border-border/40 pl-4">
+            <Button variant="ghost" size="sm" asChild className="transition-all duration-300">
               <Link to="/login">
                 <LogIn className="mr-1.5 h-4 w-4" />
                 Login
               </Link>
             </Button>
-            <Button size="sm" asChild>
+            <Button size="sm" asChild className="transition-all duration-300 hover:scale-105">
               <Link to="/signup">
                 <UserPlus className="mr-1.5 h-4 w-4" />
                 Sign Up
@@ -62,7 +62,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="inline-flex items-center justify-center rounded-md p-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground md:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-foreground transition-all duration-300 hover:bg-accent hover:text-accent-foreground md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -78,7 +78,7 @@ export default function Header() {
               <button
                 key={link.path}
                 onClick={() => handleNavClick(link.path)}
-                className="rounded-md px-3 py-2 text-left text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="rounded-md px-3 py-2 text-left text-sm font-medium transition-all duration-300 hover:bg-accent hover:text-accent-foreground"
               >
                 {link.label}
               </button>
@@ -86,14 +86,14 @@ export default function Header() {
             <div className="border-t border-border/40 pt-2">
               <button
                 onClick={() => handleNavClick('/login')}
-                className="flex w-full items-center rounded-md px-3 py-2 text-left text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="flex w-full items-center rounded-md px-3 py-2 text-left text-sm font-medium transition-all duration-300 hover:bg-accent hover:text-accent-foreground"
               >
                 <LogIn className="mr-2 h-4 w-4" />
                 Login
               </button>
               <button
                 onClick={() => handleNavClick('/signup')}
-                className="flex w-full items-center rounded-md px-3 py-2 text-left text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="flex w-full items-center rounded-md px-3 py-2 text-left text-sm font-medium transition-all duration-300 hover:bg-accent hover:text-accent-foreground"
               >
                 <UserPlus className="mr-2 h-4 w-4" />
                 Sign Up

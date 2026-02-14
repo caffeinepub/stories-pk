@@ -1,22 +1,104 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Home Explore by Category: solid minimal black-and-white icons",
+  "title": "Luxury UI polish: cinematic hero, refined navbar depth/spacing, elevated cards, consistent button hovers, premium font pairing",
   "requirements": [
     {
-      "id": "REQ-24",
-      "summary": "Replace Home “Explore by Category” sub-icons with a consistent solid/filled, minimal black-and-white icon set while preserving the existing grid/card layout and copy.",
+      "id": "REQ-25",
+      "summary": "Update Home hero image to a darker cinematic asset and add a soft black gradient overlay for a luxury feel while keeping CTA/text readable.",
       "acceptanceCriteria": [
-        "On the Home page, the “Explore by Category” section renders the same grid layout as before (same column behavior, card structure, spacing, and typography).",
-        "All category icons appear as solid/filled, minimal, and consistent in style (no mixed outline vs solid styles).",
-        "Icons use a black-and-white presentation consistent with the luxury theme (no colored accents for the icon glyphs).",
-        "No other Home page sections (Hero, Featured Stories, About, Newsletter) or other routes/pages are visually or functionally changed."
+        "Home page hero image asset is updated to a darker, cinematic image (used as a static asset under frontend/public/assets/generated).",
+        "A soft black gradient overlay is visibly applied over the hero image without reducing text/CTA readability.",
+        "No backend image serving is introduced; the hero image is referenced directly from the Home page."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/home/HomeCategoriesGrid.tsx",
+          "path": "frontend/public/assets/generated/storiespk-hero-cinematic-dark.dim_1600x600.png",
+          "operation": "create",
+          "description": "Add the new darker cinematic hero background image asset at this exact path and filename so HomePage can reference it directly as a static asset."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Remove the current mixed-outline lucide-react icons and replace them with a cohesive set of solid/filled minimal SVG icon components (e.g., local React components in this file) mapped 1:1 to the existing categories; update only icon-related styling to use black-and-white (e.g., text-foreground / bg-foreground opacity) while keeping the existing grid/card structure, spacing, category count/order, and text content unchanged."
+          "description": "Replace the hero image reference with frontend/public/assets/generated/storiespk-hero-cinematic-dark.dim_1600x600.png and add a soft black gradient overlay layer (e.g., absolute overlay within the image wrapper or hero section) to achieve a cinematic luxury look without harming text/CTA readability."
+        }
+      ]
+    },
+    {
+      "id": "REQ-26",
+      "summary": "Refine the sticky navbar with roomier padding, increased desktop item spacing, and a subtle drop shadow while preserving existing nav behavior on desktop and mobile.",
+      "acceptanceCriteria": [
+        "Desktop navbar menu items have noticeably increased spacing compared to current styling, without wrapping/truncation on common viewport widths.",
+        "Header container padding is increased (or otherwise feels roomier) while keeping layout aligned within the existing max width container.",
+        "A subtle shadow appears under the navbar when viewed against page content, and the navbar remains sticky and functional on scroll.",
+        "Mobile menu open/close behavior and navigation actions remain unchanged."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Adjust Tailwind classes to increase the header container padding and horizontal spacing between desktop nav items (and the auth button group), and add a subtle shadow to the sticky header container while keeping the existing navigation structure and mobile menu toggle behavior unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "summary": "Enhance story cards with stronger soft shadows and smooth hover lift/scale interactions across StoryCard and LuxuryFeaturedStoryCard without layout shifts.",
+      "acceptanceCriteria": [
+        "Cards in the Stories listing (StoryCard) have a stronger soft shadow than before, without looking harsh or overly dark.",
+        "Cards in the Stories listing show a smooth hover effect (lift and/or slight scale) with an appropriate transition duration/easing.",
+        "Home page featured story cards (LuxuryFeaturedStoryCard) maintain the luxury look and also reflect the improved depth/hover interaction (consistent feel across card types).",
+        "Hover interaction does not cause layout shift that breaks the grid (no jumping content)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/stories/StoryCard.tsx",
+          "operation": "modify",
+          "description": "Update the Card className to use a stronger-but-soft base shadow and add a smooth hover interaction (subtle translate/scale) with transition duration/easing; ensure transforms don’t cause grid layout shift (use transform-based effects, not margin/padding changes)."
+        },
+        {
+          "path": "frontend/src/components/home/LuxuryFeaturedStoryCard.tsx",
+          "operation": "modify",
+          "description": "Align the featured card’s depth and hover interaction with StoryCard (slightly stronger soft shadow + smooth hover lift/scale with consistent transition), while preserving the existing luxury styling, readability, and content layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-28",
+      "summary": "Standardize site-wide button hover interactions with smooth 0.3s transitions and consistent luxury-themed hover/focus styling without editing read-only shadcn/ui source files.",
+      "acceptanceCriteria": [
+        "All buttons across pages have a consistent 0.3s hover transition (at minimum covering background/border/text color; include transform where applicable).",
+        "Button border radius is consistent across variants and matches the global radius token already used by the theme.",
+        "Buttons that are meant to be solid black (e.g., primary CTAs on the Home page) remain solid black with white text and have refined hover/focus states consistent with a luxury theme.",
+        "No edits are made directly inside read-only UI component source files under frontend/src/components/ui; changes are achieved via composition, styling, or global CSS/theme tokens."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global base styles so buttons (and button-like interactive elements) consistently use a 0.3s transition for hover/focus (e.g., duration-300 and appropriate transition properties), without modifying any files under frontend/src/components/ui."
+        }
+      ]
+    },
+    {
+      "id": "REQ-29",
+      "summary": "Apply a premium editorial font pairing site-wide: serif for headings and clean sans-serif for body text, loaded reliably in the app.",
+      "acceptanceCriteria": [
+        "Headings (h1–h6 and heading-styled components) render with the selected serif font across the site.",
+        "Body text renders with the selected sans-serif font across the site.",
+        "Fonts are loaded correctly in the app (no fallback-only rendering in typical browsers).",
+        "Typography remains readable on mobile and desktop, and existing page layouts do not break due to font changes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Load the chosen fonts (Playfair Display for headings and Inter for body) via appropriate font link tags so typical browsers download the fonts reliably at runtime."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Apply the font pairing globally (e.g., body uses the sans font family; h1–h6 use the serif font family) to ensure consistent typography across all pages without requiring per-page changes."
         }
       ]
     }

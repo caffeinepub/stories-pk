@@ -1,14 +1,29 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T05:39:35.450Z",
-  "summary": "HomeCategoriesGrid.tsx was updated to use inline solid/filled SVG icons (fill=\"currentColor\") for all categories, aligning with a minimal black-and-white style while keeping the existing grid/card structure and category text intact per the diff provided. No evidence in the diff summary indicates changes to other Home sections or other routes/pages.",
+  "generatedAt": "2026-02-14T05:49:38.499Z",
+  "summary": "Implemented the requested UI polish items: updated the Home hero to a darker cinematic image with a black gradient overlay, refined sticky navbar spacing/padding with a subtle shadow, enhanced StoryCard and LuxuryFeaturedStoryCard shadows + hover lift, added global 0.3s transitions for interactive elements, and introduced a serif/sans premium font pairing loaded via Google Fonts. However, the diff also changes global theme color tokens (e.g., setting a “Royal Blue accent” primary and adding gold/chart tokens), which was not explicitly requested and may exceed the scope of hero/navbar/cards/buttons/typography polish.",
   "missing_requirements": [],
-  "hallucinated_features": [],
-  "confidence": 0.66,
+  "hallucinated_features": [
+    {
+      "description": "Global theme color/token redesign (e.g., switching primary to a “Royal Blue accent”, adding gold and chart palette tokens) beyond the requested hero/navbar/cards/buttons/typography polish.",
+      "reason": "BuildRequest focuses on specific UI polish areas and does not request changing the site’s primary/accent color system or introducing new palette tokens like gold/charts.",
+      "evidence": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ]
+    }
+  ],
+  "confidence": 0.74,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/home/HomeCategoriesGrid.tsx",
+    "frontend/index.html",
+    "frontend/src/components/home/LuxuryFeaturedStoryCard.tsx",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/components/stories/StoryCard.tsx",
+    "frontend/src/index.css",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

@@ -17,7 +17,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section - Luxury Banner */}
+      {/* Hero Section - Cinematic Luxury Banner */}
       <section className="relative overflow-hidden bg-background">
         <div className="container mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -35,7 +35,7 @@ export default function HomePage() {
                 <Button 
                   asChild 
                   size="lg" 
-                  className="bg-black text-white hover:bg-black/90 focus-visible:ring-black text-base font-semibold shadow-lg"
+                  className="bg-black text-white hover:bg-black/90 focus-visible:ring-black text-base font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
                   <Link to="/stories">Read Stories</Link>
                 </Button>
@@ -43,21 +43,23 @@ export default function HomePage() {
                   variant="outline"
                   size="lg"
                   onClick={handleExploreCategoriesClick}
-                  className="text-base font-semibold"
+                  className="text-base font-semibold transition-all duration-300 hover:scale-105"
                 >
                   Explore Categories
                 </Button>
               </div>
             </div>
 
-            {/* Right Side - Luxury Image */}
+            {/* Right Side - Cinematic Dark Image with Gradient Overlay */}
             <div className="relative">
-              <div className="overflow-hidden rounded-2xl shadow-luxury">
+              <div className="relative overflow-hidden rounded-2xl shadow-luxury">
                 <img
-                  src="/assets/generated/storiespk-hero-luxury.dim_1600x600.png"
-                  alt="Elegant storytelling scene with books and warm lighting"
+                  src="/assets/generated/storiespk-hero-cinematic-dark.dim_1600x600.png"
+                  alt="Cinematic storytelling scene with dramatic lighting"
                   className="h-full w-full object-cover"
                 />
+                {/* Soft black gradient overlay for luxury feel */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
               </div>
             </div>
           </div>
@@ -131,7 +133,7 @@ export default function HomePage() {
                 create meaningful connections across communities.
               </p>
               <div className="pt-4">
-                <Button asChild size="lg" variant="outline" className="text-base font-semibold">
+                <Button asChild size="lg" variant="outline" className="text-base font-semibold transition-all duration-300 hover:scale-105">
                   <Link to="/about">Learn More</Link>
                 </Button>
               </div>

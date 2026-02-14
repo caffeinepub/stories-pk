@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-icon-style-used-in-the-home-page-explore-by-category-section-rendered-by-frontend-src-components-home-homecategoriesgrid-tsx-so-all-category-sub-icons-look-professional-solid-filled-clean-and-minimal-in-an-elegant-black-and-white-luxury-theme-without-changing-the-existing-layout-spacing-category-count-order-or-text-content",
-      "featureTitle": "Update the icon style used in the Home page “Explore by Category” section (rendered by `frontend/src/components/home/HomeCategoriesGrid.tsx`) so all category sub-icons look professional, solid/filled, clean, and minimal in an elegant black-and-white luxury theme, without changing the existing layout, spacing, category count/order, or text content.",
+      "featureId": "feature-replace-the-home-page-hero-image-with-a-darker-cinematic-premium-looking-background-and-apply-a-soft-black-gradient-overlay-on-top-of-the-image-to-achieve-a-luxury-high-class-feel",
+      "featureTitle": "Replace the Home page hero image with a darker, cinematic, premium-looking background and apply a soft black gradient overlay on top of the image to achieve a luxury/high-class feel.",
       "files": [
-        "frontend/src/components/home/HomeCategoriesGrid.tsx"
+        "frontend/src/pages/HomePage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,7 +15,81 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-24"
+        "REQ-25"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-refine-the-site-navbar-styling-by-increasing-horizontal-spacing-between-desktop-menu-items-increasing-header-padding-and-adding-a-subtle-drop-shadow-under-the-sticky-navbar-for-depth-while-preserving-existing-navigation-structure-and-behavior-desktop-mobile",
+      "featureTitle": "Refine the site navbar styling by increasing horizontal spacing between desktop menu items, increasing header padding, and adding a subtle drop shadow under the sticky navbar for depth while preserving existing navigation structure and behavior (desktop + mobile).",
+      "files": [
+        "frontend/src/components/layout/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-26"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-enhance-story-card-styling-across-the-app-by-applying-a-slightly-stronger-but-still-soft-shadow-and-adding-a-smooth-hover-interaction-subtle-lift-or-scale-to-make-cards-feel-modern-and-interactive-while-maintaining-readability-and-existing-content-layout",
+      "featureTitle": "Enhance story card styling across the app by applying a slightly stronger (but still soft) shadow and adding a smooth hover interaction (subtle lift or scale) to make cards feel modern and interactive, while maintaining readability and existing content/layout.",
+      "files": [
+        "frontend/src/components/home/LuxuryFeaturedStoryCard.tsx",
+        "frontend/src/components/stories/StoryCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-27"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-upgrade-button-interactions-site-wide-by-ensuring-all-buttons-have-smooth-hover-animations-with-a-0-3s-transition-consistent-border-radius-and-styling-aligned-with-the-black-luxury-theme-preserving-existing-button-variants-and-behaviors",
+      "featureTitle": "Upgrade button interactions site-wide by ensuring all buttons have smooth hover animations with a 0.3s transition, consistent border radius, and styling aligned with the black luxury theme (preserving existing button variants and behaviors).",
+      "files": [
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-28"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-premium-editorial-font-pairing-by-using-a-classy-serif-font-for-headings-e-g-playfair-display-or-cormorant-and-a-clean-sans-serif-font-for-body-text-e-g-inter-or-poppins-and-apply-it-consistently-across-all-pages",
+      "featureTitle": "Implement premium editorial font pairing by using a classy serif font for headings (e.g., Playfair Display or Cormorant) and a clean sans-serif font for body text (e.g., Inter or Poppins), and apply it consistently across all pages.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-29"
       ],
       "confidence": "high"
     }

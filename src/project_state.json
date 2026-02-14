@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 13,
-  "summary": "Refine the Home page only: keep the luxury layout but shift to a clean, elegant black-and-white professional look by removing only story thumbnail images from Featured Story cards, updating “Read Stories”/“Read More” buttons to solid black with white text, and updating the “Explore by Category” section icons to solid, clean, minimal black-and-white icons (icon style only; no layout changes).",
+  "projectStateVersion": 15,
+  "summary": "Expand Home page polish beyond icon/button tweaks: update Hero to a darker cinematic premium background with a soft black gradient overlay; refine navbar spacing/padding and add subtle shadow depth; enhance story card shadows and hover interactions; standardize button hover transitions and border radius; and adopt premium editorial font pairing (serif headings + sans-serif body) while maintaining the black luxury theme.",
   "architectural_notes": [
     "Site name: stories.pk",
     "Primary pages: Home, Stories (listing + detail), About, Contact",
@@ -19,6 +19,7 @@
     "Homepage copy drafts include 'Stories.com' (About/footer). Must be updated to 'stories.pk' for domain/content consistency."
   ],
   "isFixRequest": false,
+  "imageRequirements": "## Edit Images\n- Replace the hero background with a darker cinematic premium image (storiespk-hero-luxury.dim_1600x600.png > storiespk-hero-cinematic-dark.dim_1600x600.png)",
   "existing_features": [
     {
       "id": "feature-create-a-multi-page-frontend-with-these-routes-and-pages-all-in-english-user-facing-text-home-stories-stories-story-detail-stories-slug-or-id-about-about-and-contact-contact-use-a-shared-site-layout-with-a-persistent-header-logo-navigation-and-footer-across-all-pages",
@@ -211,6 +212,46 @@
         "REQ-24"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-replace-the-home-page-hero-image-with-a-darker-cinematic-premium-looking-background-and-apply-a-soft-black-gradient-overlay-on-top-of-the-image-to-achieve-a-luxury-high-class-feel",
+      "title": "Replace the Home page hero image with a darker, cinematic, premium-looking background and apply a soft black gradient overlay on top of the image to achieve a luxury/high-class feel.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refine-the-site-navbar-styling-by-increasing-horizontal-spacing-between-desktop-menu-items-increasing-header-padding-and-adding-a-subtle-drop-shadow-under-the-sticky-navbar-for-depth-while-preserving-existing-navigation-structure-and-behavior-desktop-mobile",
+      "title": "Refine the site navbar styling by increasing horizontal spacing between desktop menu items, increasing header padding, and adding a subtle drop shadow under the sticky navbar for depth while preserving existing navigation structure and behavior (desktop + mobile).",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-story-card-styling-across-the-app-by-applying-a-slightly-stronger-but-still-soft-shadow-and-adding-a-smooth-hover-interaction-subtle-lift-or-scale-to-make-cards-feel-modern-and-interactive-while-maintaining-readability-and-existing-content-layout",
+      "title": "Enhance story card styling across the app by applying a slightly stronger (but still soft) shadow and adding a smooth hover interaction (subtle lift or scale) to make cards feel modern and interactive, while maintaining readability and existing content/layout.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-upgrade-button-interactions-site-wide-by-ensuring-all-buttons-have-smooth-hover-animations-with-a-0-3s-transition-consistent-border-radius-and-styling-aligned-with-the-black-luxury-theme-preserving-existing-button-variants-and-behaviors",
+      "title": "Upgrade button interactions site-wide by ensuring all buttons have smooth hover animations with a 0.3s transition, consistent border radius, and styling aligned with the black luxury theme (preserving existing button variants and behaviors).",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-premium-editorial-font-pairing-by-using-a-classy-serif-font-for-headings-e-g-playfair-display-or-cormorant-and-a-clean-sans-serif-font-for-body-text-e-g-inter-or-poppins-and-apply-it-consistently-across-all-pages",
+      "title": "Implement premium editorial font pairing by using a classy serif font for headings (e.g., Playfair Display or Cormorant) and a clean sans-serif font for body text (e.g., Inter or Poppins), and apply it consistently across all pages.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -301,6 +342,36 @@
     {
       "id": "AR-15",
       "summary": "Homepage: update “Explore by Category” sub-icons to solid, clean, minimal professional black-and-white icons (icon style only; keep layout unchanged)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Replace Home hero image with a darker, cinematic premium background and apply a soft black gradient overlay for a luxury feel",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Refine navbar styling: increase spacing between menu items, increase padding, and add a subtle shadow for depth",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Enhance Featured Story card styling: slightly stronger soft shadow and smooth hover lift/scale interaction for a modern interactive feel",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Upgrade button interactions site-wide: add smooth 0.3s hover transitions to all buttons, ensure consistent border radius, and keep alignment with the black luxury theme",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Improve typography by using a premium serif font for headings (e.g., Playfair Display/Cormorant) and a clean sans-serif for body (e.g., Inter/Poppins)",
       "reqIds": [],
       "status": "pending"
     }

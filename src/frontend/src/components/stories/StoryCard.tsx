@@ -11,7 +11,7 @@ interface StoryCardProps {
 
 export default function StoryCard({ story }: StoryCardProps) {
   return (
-    <Card className="group flex h-full flex-col transition-all hover:shadow-lg">
+    <Card className="group flex h-full flex-col shadow-card-enhanced transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover">
       <CardHeader>
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <Badge variant="secondary">{story.category}</Badge>
@@ -28,7 +28,7 @@ export default function StoryCard({ story }: StoryCardProps) {
             </div>
           )}
         </div>
-        <CardTitle className="line-clamp-2 transition-colors group-hover:text-primary">
+        <CardTitle className="line-clamp-2 transition-colors duration-300 group-hover:text-primary">
           <Link to="/stories/$slug" params={{ slug: story.slug }}>
             {story.title}
           </Link>
@@ -47,10 +47,10 @@ export default function StoryCard({ story }: StoryCardProps) {
         )}
       </CardContent>
       <CardFooter>
-        <Button asChild variant="ghost" className="group/btn w-full justify-between">
+        <Button asChild variant="ghost" className="group/btn w-full justify-between transition-all duration-300">
           <Link to="/stories/$slug" params={{ slug: story.slug }}>
             Read More
-            <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
           </Link>
         </Button>
       </CardFooter>
